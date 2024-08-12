@@ -1,0 +1,31 @@
+plugins {
+    id "dev.arbjerg.lavalink.gradle-plugin" version "1.0.15"
+}
+
+lavalinkPlugin {
+    name = "soundcloud-ru-plugin"
+    apiVersion = "4.0.0"
+    serverVersion = "4.0.5"
+    configurePublishing = false
+}
+
+base {
+    archivesName = "soundcloud-ru-plugin"
+}
+
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(17)
+    }
+}
+
+tasks {
+    compileJava {
+        options.encoding = "UTF-8"
+    }
+}
+
+dependencies {
+    implementation project(":main")
+}
